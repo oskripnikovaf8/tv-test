@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+    font-size: 100%;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body {
+    font-size: 16px;
+    font-family: $font-montserrat;
+    font-weight: $fw-medium;
+    height: 100vh;
+    line-height: 1.5;
+    color: $color-text;
+    background-color: $color-bg;
+    margin: 0;
+}
+
+main { 
+    padding: 96px 24px;
+    margin: 0 auto;
+
+    @include tablet {
+        padding: 96px 30px;
+    }
+
+    @include desktop {
+        max-width: calc(984px + 60px);
+    }
+
+    @include desktop-medium {
+        max-width: calc(1513px + 60px);
+    }
+}
+
+.grid-container {
+    @include base-grid;
+    align-items: start;
+
+    &__col1 {
+        grid-column: col / span 4;
+
+        @include tablet {
+            grid-column: col / span 6;
+        }
+
+        @include desktop {
+            grid-column: col / span 12;
+        }
+
+        @include desktop-medium {
+            grid-column: col / span 8;
+            grid-column-start: 1;
+        }
+    }
+
+    &__col2 {
+        display: none;
+
+        @include desktop-medium {
+            grid-column: col / span 4;
+            grid-column-start: 9;
+
+            display: flex;
+            justify-content: stretch;
+        }
+    }
+}
+
+.grid-container-detail {
+    @include base-grid;
+    align-items: start;
+
+    &__col1 {
+        grid-column: col / span 4;
+
+        @include tablet {
+            grid-column: col / span 6;
+        }
+
+        @include desktop {
+            grid-column: col / span 8;
+        }
+
+        @include desktop-medium {
+            grid-column: col / span 8;
+            grid-column-start: 1;
+        }
+    }
+
+    &__col2 {
+        display: none;
+
+        @include desktop {
+            grid-column: col / span 4;
+            grid-column-start: 9;
+
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        @include desktop-medium {
+            justify-content: stretch;
+        }
+    }
+}
+
+.banner {
+    img {
+        max-width: 100%;
+    }
+
+    @include desktop-medium {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 86px 0;
+        border-radius: 15px;
+        background-color: $color-card-grey;
+
+    }
+}
+
+.mb-18 {
+    margin-bottom: 18px;
+}

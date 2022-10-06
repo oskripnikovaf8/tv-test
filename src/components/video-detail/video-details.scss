@@ -1,0 +1,67 @@
+@import 'src/general/scss/index.scss';
+
+.video-detail {
+
+    position: relative;
+
+    &__header {
+        grid-column: col / span 4;
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 30px;
+
+        @include tablet {
+            grid-column: col / span 6;
+        }
+
+        @include desktop {
+            margin-bottom: 40px;
+            grid-column: col / span 8;
+            grid-column-start: 1;
+        }
+
+        @include desktop-medium {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 0;
+    }
+
+    &__all-link {
+        display: block;
+        color: $color-blue;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: $fw-bold;
+
+        span {
+            display: none;
+            &.is-mobile {
+                @include mobile-only {
+                    display: block;
+                }
+            }
+            &.is-tablet {
+                @include tablet-only {
+                    display: block;
+                }
+            }
+            &.is-desktop {
+                @include desktop-only {
+                    display: block;
+                }
+            }
+            &.is-destop-medium {
+                @include desktop-medium {
+                    display: block;
+                }
+            }
+        }
+    }
+
+}

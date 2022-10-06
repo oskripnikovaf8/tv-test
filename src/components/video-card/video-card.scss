@@ -1,0 +1,107 @@
+@use "sass:math";
+@import 'src/general/scss/index.scss';
+
+.video-card {
+    $this: &;
+
+    &__media {
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 20px;
+
+        @include objectFitImageParent;
+
+        &:before {
+            content: '';
+            display: block;
+            padding-top: math.percentage(math.div(135,240));
+        }
+
+        &:hover {
+            #{$this}__hover-content {
+                top: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    &__hover-content {
+        position: absolute;
+        top: 100%;
+        bottom: -100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: top 0.5s ease-in-out, bottom 0.5s ease-in-out;
+
+        display: flex;
+        align-items: stretch;
+    }
+
+    &__hover-content-inner {
+        font-size: 12px;
+        font-weight: $fw-medium;
+        line-height: 1.43;
+        position: relative;
+
+        padding: 15px 17px;
+
+        @include desktop {
+            font-size: 14px;
+            padding: 25px 27px;
+        }
+        
+    }
+
+    &__hover-text {
+        height: calc(100% - 50px);
+        overflow: hidden;
+        position: relative;
+
+        @include desktop {
+            height: calc(100% - 75px);
+        }
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $color-white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: $fw-bold;
+        position: absolute;
+        padding: 10px 20px;
+
+        left: 17px;
+        right: 17px;
+        bottom: 15px;
+        min-height: 40px;
+        background-color: $color-card-grey;
+        border-radius: 40px;
+
+        @include desktop {
+            border-radius: 60px;
+            bottom: 25px;
+            width: 300px;
+            max-width: 100%;
+            min-height: 50px;
+        }
+    }
+
+    &__title {
+        font-size: 14px;
+        font-weight: $fw-bold;
+        line-height: 1.43;
+
+        @include desktop-medium {
+            font-size: 16px;
+        }
+    }
+
+    &__description {
+        display: block;
+    }
+}

@@ -1,0 +1,72 @@
+@import 'src/general/scss/index.scss';
+
+.video-comment {
+    background-color: $color-card-grey;
+    border-radius: 15px;
+    padding: 30px 30px 25px 30px;
+    margin-bottom: 30px;
+
+    font-size: 16px;
+    font-weight: $fw-medium;
+    line-height: 1.5;
+
+    @include tablet {
+        margin-bottom: 60px;
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    @include desktop-medium {
+        padding: 57px 61px 56px;
+        margin-bottom: 80px;
+    }
+
+    &__author-area {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 10px;
+
+        @include tablet {
+            margin-bottom: 27px;
+        }
+    }
+
+    &__author {
+        font-weight: $fw-bold;
+        font-size: 16px;
+        line-height: 1.75;
+        margin-bottom: 0;
+
+        @include tablet {
+            font-size: 20px;
+            line-height: 1.4;
+            margin-bottom: 3px;
+        }
+    }
+
+    &__description {
+        font-size: 14px;
+        line-height: 1.2;
+        color: $color-btn-grey;
+
+        @include tablet {
+            font-size: 16px;
+        }
+    }
+
+    &__image {
+        width: 105px;
+        height: 105px;
+        overflow: hidden;
+        border-radius: 50%;
+        position: relative;
+        @include objectFitImageParent;
+
+        display: none;
+
+        @include desktop-medium {
+            display: block;
+        }
+    }
+}

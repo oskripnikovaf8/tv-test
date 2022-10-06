@@ -1,0 +1,130 @@
+@import 'src/general/scss/index.scss';
+
+.video-full-card {    
+    @include tablet {
+        background-color: $color-card-grey;
+        border-radius: 15px;
+        padding: 28px 30px;
+        transition: padding 0.2s ease-in-out, margin 0.2s ease-in-out;
+        margin-bottom: 29px;
+
+        display: flex;
+        align-items: flex-start;
+        gap: 40px;
+
+        @include tablet {
+            margin-bottom: 60px;
+        }
+        @include desktop-medium {
+            padding: 57px 61px 56px;
+            margin-bottom: 80px;
+        }
+    }
+
+    &__media {
+        width: 232px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        overflow: hidden;
+        border-radius: 15px;
+        margin-bottom: 22px;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        img[src*="http"] {
+            opacity: 1;
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+        line-height: 1.22;
+        margin-bottom: 8px;
+    }
+    
+    &__labels {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 14px;
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+            background-color: $color-btn-grey;
+            color: $color-bg;
+            font-size: 10px;
+            line-height: 1.22;
+            font-weight: $fw-bold;
+            border-radius: 10px;
+            min-height: 15px;
+        }
+
+        li + li {
+            margin-left: 14px;
+        }
+    }
+
+    &__production {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 24px;
+
+        font-weight: $fw-medium;
+        font-size: 14px;
+        line-height: 1.42;
+        color: $color-btn-grey;
+
+        li + li {
+            margin-left: 10px;
+            padding-left: 14px;
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 8px;
+                width: 4px;
+                height: 4px;
+                border-radius: 2px;
+                background-color: $color-btn-grey;
+            }
+        }
+    }
+
+    &__content {
+        margin-bottom: 30px;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &__content-wrapped {
+        padding-bottom: 20px;
+        @include desktop {
+            padding-left: 10px;
+        }
+    }
+    
+    &__btn-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 330px;
+        gap: 10px;
+    }
+
+}

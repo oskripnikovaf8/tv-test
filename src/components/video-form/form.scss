@@ -1,0 +1,131 @@
+@import 'src/general/scss/index.scss';
+
+.form {
+
+    legend {
+        padding: 0;
+        display: table;
+        font-size: 16px;
+        font-weight: $fw-medium;
+        margin-bottom: 40px;
+
+        @include desktop-medium {
+            margin-bottom: 42px;
+        }
+    }
+    
+    fieldset {
+        border: 0;
+        padding: 0.01em 0 0 0;
+        margin: 0;
+        min-width: 0;
+    }
+
+    &__card {
+    
+        @include tablet {
+            padding: 35px 25px;
+            background-color: $color-card-grey;
+            border-radius: 15px;
+        }
+
+        @include desktop-medium {
+            padding: 30px;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: 1.5;
+        font-weight: $fw-bold;
+        text-transform: uppercase;
+
+        @include tablet {
+            font-size: 24px;
+            line-height: 1.66;
+        }
+
+        @include desktop-medium {
+            font-size: 36px;
+            line-height: 1.11;
+            margin-bottom: 38px;
+        }
+    }
+
+    &__field {
+        margin-bottom: 38px;
+    }
+
+    &__asterix {
+        color: $color-red;
+        padding-left: 4px;
+    }
+
+    &__alert {
+        color: $color-red;
+        text-align: right;
+        font-size: 12px;
+        font-weight: $fw-regular;
+        margin-top: 4px;
+    }
+
+    label {
+        display: block;
+        font-size: 14px;
+        color: $color-white;
+        margin-bottom: 14px;
+    }
+
+    input,
+    textarea {
+        display: block;
+        width: 100%;
+        height: 50px;
+        padding: 10px 20px;
+        background-color: $color-card-grey;
+        color: $color-text-grey;
+        outline: none;
+        border: 0;
+        border-radius: 25px;
+    
+        font-size: 16px;
+        font-family: $font-montserrat;
+        line-height: 1.5;
+        font-weight: $fw-medium;
+
+        @include tablet {
+            background-color: $color-bg;
+        }
+    }
+
+    textarea {
+        min-height: 100px;
+        resize: none;
+    }
+
+    input[type="submit"] {
+        color: $color-white;
+        font-size: 14px;
+        font-weight: $fw-bold;
+        text-transform: uppercase;
+        background-color: $color-blue;
+        width: 300px;
+        max-width: 100%;
+        transition: all 0.3s ease-in-out;
+
+        &.btn--error {
+            background-color: $color-bg;
+            outline: 1px solid $color-red;
+        }
+
+        &.btn--success {
+            background-color: $color-green;
+        }
+    }
+
+    .is-field-error {
+        label {
+            color: $color-red;
+        }
+    }
+}

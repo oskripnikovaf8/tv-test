@@ -1,0 +1,57 @@
+/*  reset default styles */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    font-family: $font-montserrat;
+}
+
+ul {
+    @include reset-list;
+ 
+}
+
+img {
+    vertical-align: top;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: $fw-bold;
+    text-transform: uppercase;
+    line-height: 1.21;
+    margin-bottom: 15px;
+
+    transition: font-size 0.2s, margin-bottom 0.2s;
+
+    @include tablet {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    @include desktop {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    @include desktop-medium {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+}
+
+.sr-only {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}

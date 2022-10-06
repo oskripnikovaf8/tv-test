@@ -1,0 +1,64 @@
+
+ $breakpoints: (
+    'mobile-small': 375px,
+    'tablet': 744px,
+    'desktop': 1024px,
+    'desktop-medium': 1440px,
+    'desktop-wide': 1920px,
+);
+
+@each $size, $value in $breakpoints {
+    @custom-media --#{$size} (width >= #{$value});
+}
+
+@custom-media --only-mobile (width < #{map-get($breakpoints, tablet)});
+@custom-media --only-tablet (width >= #{map-get($breakpoints, tablet)}) and (width < #{map-get($breakpoints, desktop)});
+@custom-media --only-desktop (width >= #{map-get($breakpoints, desktop)}) and (width < #{map-get($breakpoints, desktop-medium)});
+
+@mixin mobile-small {
+    @media (--mobile-small) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (--tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (--desktop) {
+        @content;
+    }
+}
+
+@mixin desktop-medium {
+    @media (--desktop-medium) {
+        @content;
+    }
+}
+
+@mixin desktop-wide {
+    @media (--desktop-wide) {
+        @content;
+    }
+}
+
+@mixin mobile-only {
+    @media (--only-mobile) {
+        @content;
+    }
+}
+
+@mixin tablet-only {
+    @media (--only-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop-only {
+    @media (--only-desktop) {
+        @content;
+    }
+}
