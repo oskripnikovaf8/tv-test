@@ -101,6 +101,7 @@
     textarea {
         min-height: 100px;
         resize: none;
+        border: 1px solid $color-blue;
     }
 
     input[type="submit"] {
@@ -126,6 +127,10 @@
     .is-field-error {
         label {
             color: $color-red;
+        }
+
+        input {
+            border: 1px solid $color-red;
         }
     }
 }
